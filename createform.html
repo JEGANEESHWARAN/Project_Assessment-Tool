@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="createform.css">
+    <title>Online Assessment</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Custom CSS styles can go here if needed */
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function goods() {
+            var a = document.getElementById("title").value;
+            var b = document.getElementById("hi").value;
+            var c = document.getElementById("sc").value;
+            var d = document.getElementById("dat").value;
+            var e = document.getElementById("mark").value;
+            var reg = /^[0-9]{1,5}$/;
+            var reg1 = /^[A-Za-z0-9 ]+$/;
+
+            if (a === "" || b === "" || b === "Categories" || c === "" || d === "" || e === "") {
+                document.getElementById("test").innerHTML = "Fill all required fields";
+                document.getElementById("test").style.color = "red";
+            } else if (!a.match(reg1)) {
+                document.getElementById("test").innerHTML = "Invalid Test Title";
+                document.getElementById("test").style.color = "red";
+            } else if (!e.match(reg)) {
+                document.getElementById("test").innerHTML = "Invalid Total Mark";
+                document.getElementById("test").style.color = "red";
+            } else {
+                $('#createModal').modal('show'); // Show Bootstrap modal
+                const user = { title: a, cate: b, subCate: c, date: d, mark: e };
+                const userJson = JSON.stringify(user);
+                localStorage.setItem('user', userJson);
+            }
+            function showLogoutModal() {
+
+            }
+        }
+    </script>
+    <style>
+        .col-md-6 {
+            box-shadow: 0 0 10px;
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+        }
+
+        .form-group input {
+            border: 1px solid;
+        }
+
+        .form-group select {
+            border: 1px solid;
+        }
+
+        .form-group textarea {
+            border: 1px solid;
+        }
+
+        .form-group label {
+            font-size: 1.3rem;
+            font-weight: 550;
+            color: rgb(2, 77, 109);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="di">
+            <div class="home-img">
+                <img src="./images/logoo.png" alt=" pls Wait ...">
+            </div>
+            <div class="hi">
+                <h3 >Online Assessment</h3>
+            </div></div>
+            <div class="bu">
+                <a href="createadmin.html"><input type="button" value="BACK"></a>
+            </div>
+        </div>
+        
+    </div>
+    <!-- <div class="hi">
+            <h3>Online Assessment</h3>
+        </div> -->
+    
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="contentBx mt-">
+                    <div class="formBx p-4">
+                        <form>
+                            <h2 class="text-center">Create test</h2>
+                            <p id="test" class="text-center"></p>
+                            <div class="form-group">
+                                <label for="title">Test title</label>
+                                <input type="text" id="title" class="form-control" placeholder="Enter test title">
+                            </div>
+                            <div class="form-group">
+                                <label for="hi">Categories</label>
+                                <select id="hi" class="form-control">
+                                    <option value="">Select category</option>
+                                    <option value="Programming">Programming</option>
+                                    <option value="Subject">Subject</option>
+                                    <option value="Verbal">Verbal</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sc">Sub categories</label>
+                                <input type="text" id="sc" class="form-control" placeholder="Enter sub category">
+                            </div>
+                            <div class="form-group">
+                                <label for="mark">Total mark</label>
+                                <input type="text" id="mark" class="form-control" placeholder="Enter total mark">
+                            </div>
+                            <div class="form-group">
+                                <label for="dat">Date</label>
+                                <input type="date" id="dat" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="hi-1">Description</label>
+                                <textarea id="hi-1" class="form-control" placeholder="Write something...!"
+                                    rows="3"></textarea>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="button" class="btn btn-primary" onclick="goods()">Create</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for confirmation -->
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content text-center">
+                <!-- <div class="modal-header">
+                    <h5 class="modal-title" id="createModalLabel">Confirm Test Creation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div> -->
+                <div class="modal-body">
+                    <p>Are you sure you want to create this test?</p>
+                </div>
+                <div class="modal-footer text-center align-items-center justify-content-center">
+                    <button type="button" class="btn btn-secondary text-center" data-dismiss="modal">Cancel</button>
+                    <a href="adminqustioncreate.html" class="btn btn-primary">Create</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

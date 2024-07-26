@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/logo.png" type="icons-col">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="log.css">
+    <title>Online Assessment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <script>
+    function inputs() {
+    var a = document.getElementById("in").value;
+    var b = document.getElementById("in1").value;
+    var admin_name = /^admin@gmail.com$/;
+    var admin_pass = /^12345678$/;
+    // var admin_pass=/^(?=^.{8,16}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+    var user_name = /^user@gmail.com$/;
+    // var user_pass=/^(?=^.{8,16}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+    var user_pass = /^12345678$/;
+    
+    if (a == "" && b == "") {
+        document.getElementById("test").innerHTML = "Enter username/password";
+        document.getElementById("test").style.color = "red";
+    } else if (a == "") {
+        document.getElementById("test").innerHTML = "Enter the username";
+        document.getElementById("test").style.color = "red";
+    } else if (b == "") {
+        document.getElementById("test").innerHTML = "Enter the password";
+        document.getElementById("test").style.color = "red";
+    } else if (a.match(admin_name) && b.match(admin_pass)) {
+        $("#successModal").modal("show");
+        // document.getElementById("pop").style.display = "block";
+        setTimeout(function() {
+            location.replace("createadmin.html");
+        }, 1500);
+    } else if (a.match(user_name) && b.match(user_pass)) {
+        $("#successModal").modal("show");
+        // document.getElementById("pop").style.display = "block";
+        setTimeout(function() {
+            location.replace("user.html");
+        }, 1500);
+    } else {
+        document.getElementById("test").innerHTML = "Enter valid username/password";
+        document.getElementById("test").style.color = "red";
+    }
+}
+
+    </script>
+</head>
+
+<body>
+    <div
+      class="modal fade"
+      id="successModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            > 
+               <span aria-hidden="true">&times;</span> -
+            </button>
+          </div> -->
+          <div class="modal-body text-success">
+            Your login information is correct. You have successfully signed in.
+            <p class="text-center">&check;</p>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">
+              OK
+            </button> -->
+           
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="head">
+        <div class="home-img">
+            <img src="./images/logoo.png" alt=" pls Wait ...">
+        </div>
+        <div class="hi">
+            <h3 class="text-light">Online Assessment</h3>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-6 col-sm-8">
+                <div class="formBx">
+                    <form>
+                        <h2 class="text-center mb-4">Log in</h2>
+
+                        <div class="form-group">
+                            <p id="test"></p>
+                            <label for="in" class="" style="font-size: 1.2rem;">Username</label>
+                            <input type="text" id="in" class="form-control" required>
+                            <div></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="in1" style="font-size: 1.2rem;">Password</label>
+                            <input type="password" id="in1" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <a href="forgot.html">Forgot password?</a>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary btn-block" onclick="inputs()">Login</button>
+                        </div>
+                        <!-- <div class="form-group">
+                            <p class="text-center">Don't have an account? <a href="Sign up.html">Sign up</a></p>
+                        </div>
+                        <hr> -->
+                        <!-- <h4 class="text-center mb-3">LOGIN WITH SOCIAL MEDIA</h4>
+                        <ul class="list-inline text-center mb-2">
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-tiktok"></i></a></li>
+                        </ul> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- -->
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

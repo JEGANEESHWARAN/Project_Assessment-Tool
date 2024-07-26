@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <style>
+        body{
+            
+            max-width: 2000px;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+        .head {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0px 2px 5px rgb(178, 175, 175);
+            background-color: white;
+            padding: 0px;
+            margin-bottom: 20px;
+        }
+
+        .home-img img {
+            max-width: 40%;
+            height: auto;
+        }
+
+        .hi {
+            margin-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+        }
+
+        #hits {
+            background-color: rgba(37, 20, 224, 0.505);
+            color: white;
+        }
+
+        #rb {
+            background-color: rgb(210, 214, 210);
+        }
+
+        #low {
+            background-color: lightgreen;
+        }
+
+        #rb input[type="submit"] {
+            background-color: blue;
+            color: white;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="head">
+            <div class="home-img">
+                <img src="./images/logoo.png" alt="Please Wait...">
+            </div>
+            <div class="hi">
+                <h3>Online Assessment</h3>
+            </div>
+        </div>
+        <h1></h1>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr id="rb">
+                        <th scope="col" id="low">S.no</th>
+                        <th scope="col" id="low">Title name</th>
+                        <th scope="col" id="low">Categories</th>
+                        <th scope="col" id="hits">Date</th>
+                        <th scope="col" id="hits">Total mark</th>
+                        <th scope="col" id="hits">Obtained Mark</th>
+                        <th scope="col" id="hits">Attend</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Numerical aptitude</td>
+                        <td>Aptitude</td>
+                        <td id="rb">23-06-2024</td>
+                        <td id="rb">100</td>
+                        <td id="rb">50</td>
+                        <td id="rb"><a href="#"><input type="submit" class="btn btn-primary" value="Complete"></a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Thermodynamic</td>
+                        <td>Engineering Online Tests</td>
+                        <td id="rb">23-06-2024</td>
+                        <td id="rb">100</td>
+                        <td id="rb">70</td>
+                        <td id="rb"><a href="#"><input type="submit" class="btn btn-primary" value="Complete"></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Bootstrap JS, if needed -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+</html>

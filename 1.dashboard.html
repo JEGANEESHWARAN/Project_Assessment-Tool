@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Assessment</title>
+    <link rel="icon" href="./images/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="home.css"> -->
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            max-width: 2000px;
+            display: grid;
+            justify-content: center;
+        }
+
+        /* Example styles for responsiveness */
+        .best {
+            background: linear-gradient(#003d43be, #024950);
+            /* background-color: #3d52a0; */
+        }
+
+        #loop {
+            cursor: pointer;
+            border: 2px solid;
+            box-shadow: 0 0 5px;
+            background: linear-gradient(rgb(255, 255, 0), rgba(187, 235, 12, 0.779));
+        }
+
+        #home a {
+            background-color: rgba(55, 57, 58, 0.619);
+        }
+
+        .card-body:hover {
+            transition-duration: 0.4s;
+            transform: scale(1.02);
+        }
+
+        #high {
+            font-size: 1.2rem;
+        }
+
+        #cre .row .col-md-4 .card-body {
+
+            box-shadow: 0 0 5px;
+            background-color: aliceblue;
+        }
+
+        nav {
+            background-color: #024a50c2;
+            /* background:linear-gradient(rgb(69, 69, 252),rgb(101, 132, 242),rgb(47, 47, 215)); */
+            box-shadow: 0 0 5px;
+            margin-bottom: px;
+        }
+
+        .navbar-nav li a {
+            font-size: 1.2rem;
+            font-weight: 640;
+
+            /* background-color: azure; */
+           
+           background-color: white;
+            /* background: linear-gradient(rgb(21, 82, 224), rgb(177, 174, 174)); */
+            box-shadow: 0 0 3px;
+            border-radius: 8px;
+        }
+
+        .navbar-nav li a:hover {
+            background-color: rgba(19, 217, 151, 0.751);
+            color: black;
+            /* border: 1px solid white; */
+            /* background: linear-gradient(rgb(136, 110, 229), rgb(0, 0, 0)); */
+        }
+
+        #st a {
+            background-color: #024950;
+            background-color: rgb(227, 192, 66);
+            text-align: center;
+            width: 50%;
+            border: 2px solid #020202;
+            font-size: 1.5rem;
+            font-weight: 400;
+            
+        }
+        #st a:hover{
+            transition: 0.3s;
+            box-shadow: 0 0 5px #e7ca26;
+            color: #020202;
+            transform: scale(1.02);
+           
+        }
+        /* #abo{
+            transition-duration: 4s;
+        } */
+
+        @media (max-width: 768px) {
+
+            /* Adjustments for tablets and smaller screens */
+            .navbar-nav {
+                flex-direction: column;
+            }
+
+            .navbar-brand {
+                margin-right: 40px;
+            }
+
+            #high {
+                font-size: 1rem;
+            }
+            .navbar-nav li a {
+            font-size: 1rem;
+            font-weight: 640;
+
+            /* background-color: azure; */
+            /* background-color: #0fa4; */
+           
+            /* background: linear-gradient(rgb(21, 82, 224), rgb(177, 174, 174)); */
+            box-shadow: 0 0 0px;
+            border-radius: 0px;
+        }
+
+        .navbar-nav li a:hover {
+            background-color: rgba(19, 217, 151, 0.751);
+            color: black;
+            /* background: linear-gradient(rgb(136, 110, 229), rgb(0, 0, 0)); */
+        }
+        .hilo h4{
+            margin-top: 2%;
+        }
+        }
+
+        @media (max-width: 576px) {
+
+            /* Adjustments for phones */
+            .navbar-brand {
+                font-size: 1.5rem;
+                /* Example adjustment */
+            }
+
+            .col-md-4 {
+                margin-bottom: 30px;
+                /* Example adjustment */
+            }
+        }
+
+        /* Responsive adjustments */
+
+        /* Example: Adjusting header spacing for smaller screens */
+        header {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .hilo h4{
+            margin-bottom: 10%;
+        }
+        /* Example: Adjusting footer column layout for smaller screens */
+        @media (max-width: 900px) {
+            .col-md-3 {
+                margin: 0px 60px;
+
+            }
+
+            .hilo img {
+                display: none;
+            }
+        }
+
+        @media (min-width: 500px) {
+            body {
+                overflow-x: hidden;
+            }
+        }
+
+        /* Example: Adjusting font size for smaller screens */
+        @media (max-width: 676px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            #id {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+
+   
+</head>
+
+<body>
+    <!-- <header class="bg-light py-0">
+        <div class="container-fliud d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <img src="./images/logoo.png" style="width: 25%;" alt="Loading..." class="mr-2">
+                <h3 class="">Online Assessment</h3>
+            </div>
+             <nav >
+                <ul class="nav" id="high">
+                    <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="login.html" class="nav-link">Log In</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav> -->
+    <!-- </div>
+    </header> -->
+
+    <nav class="navbar navbar-expand-md navbar-dark ">
+        <div class="container-fluid justify-content-end ">
+            <div class="container-fluid">
+                <div class="hilo d-flex">
+                    <img src="./images/logoo.png" style="width:20%;" alt="Loading..." class="mr-2">
+                    <h4 class="mt-4 text-light">Online Assessment</h3>
+                </div>
+                <!-- <a class="navbar-brand" href="#">Menu</a> -->
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon bg-dark"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item pr-2 " id="home"><a class="nav-link text-light" href="#">Home</a></li>
+                        <li class="nav-item pr-2"><a class="nav-link" href="#about" id="abo"
+                                style="color:  rgb(0, 57, 38);  ">About</a></li>
+                                <li class="nav-item pr-2"><a class="nav-link" href="#pric"
+                                    style="color:  rgb(0, 57, 38);  ">Prices</a></li>
+                                    <li class="nav-item pr-2"><a href="Signin.html" class="nav-link" style="color:  rgb(0, 57, 38);">Contact</a></li>
+                        <li class="nav-item pr-2"><a class="nav-link " href="login.html"
+                            style="color:  rgb(0, 57, 38); ">Log&nbsp;in</a></li>
+                            
+                        <!-- <li class="nav-item pr-2"><a class="nav-link" href="pricing.html"
+                                style="color: white;">Prices</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link" href="#">ASSESSMENT</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link" href="#">EXAMINATIONS</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link" href="#">STUDY</a></li> -->
+                    </ul>
+                </div>
+            </div>
+    </nav>
+    <div class="best">
+        <section class="container text-center py-5" id="best">
+            <div class="row align-items-center ">
+                <div class="col-md-6">
+                    <img src="./images/bestpart.webp" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6" id="st">
+                    <h1 class="text-light">The Best Quiz & Test Maker for Education & Business</h1>
+                    <p class="text-light fs-1">Make hiring and training tests to get insights on skills and knowledge.
+                        This tool to improve the student’s
+                        knowledge and their skills.</p>
+                    <a href="login.html" class="btn btn-primary btn-lg" style="color: rgb(0, 0, 0);">Start your
+                        test</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="container-fluid  text-center py-5 d-flex justify-content-between" id="cre">
+        <div class="row ml-3" style="width: 100%; ">
+            <div class="col-md-4 pt-3 ">
+                <div class="card h-100">
+                    <div class="card-body ">
+                        <img src="./images/create.svg" alt="" class="img-fluid mb-3">
+                        <h2>Create a test</h2>
+                        <p>Build online tests in minutes with an intuitive and easy-to-use question manager. Choose the
+                            most suitable question types, set your test timers, activity period and invite candidates or
+                            employees with just a few clicks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4  pt-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <img src="./images/access.svg" alt="" class="img-fluid mb-3">
+                        <h2>Give access</h2>
+                        <p>Experience full control over who takes your tests and when they do it. Share your tests with
+                            employees or candidates. No need to create user accounts to take tests makes this test maker
+                            tool perfect for secure pre & post-employment knowledge testing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 pt-3 ">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <img src="./images/insghts.svg" alt="" class="img-fluid mb-3">
+
+                        <h2>Get insights</h2>
+                        <p>Access real-time results during your tests and a wealth of detailed, actionable data about
+                            your candidates' or employees' knowledge right after the tests are finished. Measure the
+                            training impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5">
+        <div class="container text-center">
+            <h1>How online assessment works</h1>
+            <img src="./images/boom.png" style="width: 100%;" alt="" class="img-fluid" width="50%">
+        </div>
+    </section>
+
+    <section class="container-fluid text-center py-5" id="pric">
+        <h1>Pick your plan. Change whenever you want.</h1>
+        <div class="row mt-5">
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body" id="loop">
+                        <h2>STANDARD</h2>
+                        <p>All bare essentials for low-volume testing with limited results analysis.</p>
+                        <h3>$29</h3>
+                        <p>/per week</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body" id="loop">
+                        <h2>PRO</h2>
+                        <p>Perfect for most users. Test more with powerful analytics but limited results per month.</p>
+                        <h3>$59</h3>
+                        <p>/per month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body" id="loop">
+                        <h2>MAX</h2>
+                        <p>Full remote assessments potential unleashed. Test even more with generous monthly results
+                            limit.</p>
+                        <h3>$79</h3>
+                        <p>/three month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body" id="loop">
+                        <h2>MAX Customized</h2>
+                        <p>The ultimate business plan. Utilize all features, additional users and collaboration options.
+                        </p>
+                        <h3>$99</h3>
+                        <p>/year</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container py-4">
+            <div class="row justify-content-center align-items-center" style="background-color: rgba(0, 66, 69, 0.726); border-radius: 20px; box-shadow: 10px 10px 5px;">
+                <div class="col-md-4">
+                    <img src="./images/about.webp" class="img-fluid rounded" alt="About Us Image">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="text-light text-center mb-4">About us</h1>
+                    <h2 class="text-center mb-4">A few words about who we are and what drives us to act</h2>
+                    <p class="text-center" style="font-size: 1.2rem;">Online Assessment is a groundbreaking, innovative online platform for competencies evaluations. But enough of the bragging, let the numbers speak for themselves. We make skills and knowledge assessments objective, insightful and actionable.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h1 class="text-center mb-4">Our mission</h1>
+                    <p style="font-size: 1.2rem;">We created a revolutionary online knowledge and competencies assessment solution. It empowers thousands of organizations worldwide to grow by allowing them to get a broader picture and draw better conclusions with cutting-edge data analysis algorithms. But most of all, it allows them to fulfill their missions: to educate or do business without distractions.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h1 class="text-center mb-4">Our vision</h1>
+                    <p style="font-size: 1.2rem;">What started as the passion project of just two people evolved into a top-ranked assessment tool that is trusted and valued by educational and business organizations worldwide.</p>
+                    <p style="font-size: 1.2rem;">Today, Testportal is run by the best team in the world. It’s a results-driven mixture of capabilities, open minds, and continuous development. This group of professionals is dedicated to delivering only the highest-quality solutions. We’re focused, hard-working, and always there for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Homes</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">About Online Assessment</a></li>
+                        <li><a href="#" class="text-light">Register</a></li>
+                        <li><a href="#" class="text-light">Contact Us</a></li>
+                        <li><a href="#" class="text-light">Terms / Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Explore Content</a></li>
+                        <li><a href="#" class="text-light">Blog</a></li>
+                        <li><a href="#" class="text-light">YouTube</a></li>
+                        <li><a href="#" class="text-light">Security</a></li>
+                        <li><a href="#" class="text-light">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Terms & Conditions</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Careers</a></li>
+                        <li><a href="#" class="text-light">Privacy policy</a></li>
+                        <li><a href="#" class="text-light">Student privacy policy</a></li>
+                        <li><a href="#" class="text-light">Inclusion and accessibility policy</a></li>
+                        <li><a href="#" class="text-light">Feedback</a></li>
+                        <li><a href="#" class="text-light">Acceptable use policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-light"><i class="fab fa-instagram fa-2x mr-2"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-facebook fa-2x mr-2"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-twitter fa-2x mr-2"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-youtube fa-2x mr-2"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-tiktok fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
